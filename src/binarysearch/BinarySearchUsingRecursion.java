@@ -9,7 +9,7 @@ public class BinarySearchUsingRecursion {
         System.out.println(search(arr, 100, 0, arr.length-1));
     }
 
-    public static int search(int arr[], int target, int st, int end){
+    public static int search(int[] arr, int target, int st, int end){
 
 
         if(st <end) {
