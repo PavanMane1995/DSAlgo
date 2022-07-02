@@ -4,7 +4,7 @@ public class Cieling {
     public static void main(String[] args) {
 
         int[] arr = {2, 7, 7, 9, 11, 13, 16};
-        System.out.println(getCeiling(arr,14));
+        System.out.println(getCeiling(arr,17));
     }
 
     static int getCeiling(int[] arr,int target){

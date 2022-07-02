@@ -5,7 +5,8 @@ public class MountainPeek {
 
 
     public static void main(String[] args) {
-        int[] arr = {2, 11,22, 12, 10, 8, 3, 1};
+        //int[] arr = {2, 11,22, 12, 10, 8, 3, 1};
+        int[] arr = {0,1};
         System.out.println(arr[searchMountain(arr)]);
     }
 
