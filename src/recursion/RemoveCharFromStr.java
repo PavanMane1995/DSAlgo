@@ -6,12 +6,16 @@ public class RemoveCharFromStr {
           output -> String b = "bcdc";*/
     public static void main(String[] args) {
         String a = "abcdac";
+        String b = "afbappleout";
 
         //calling method 1
-        //removeChar("", a);
+        removeChar("", a);
 
         //calling method 2
         System.out.println(skip(a));
+
+        //calling method 3 to skip entire string from string
+        System.out.println(skipString(b));
 
     }
 
@@ -44,6 +48,17 @@ public class RemoveCharFromStr {
             return c + skip(up.substring(1));
         }
 
+    }
+
+    static String skipString(String up){
+        if(up.isEmpty()){
+            return "";
+        }
+        if(up.startsWith("apple")){
+            return skipString(up.substring(5));
+        }else{
+            return up.charAt(0) + skipString(up.substring(1));
+        }
     }
 
 }
