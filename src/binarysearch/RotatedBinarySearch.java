@@ -4,7 +4,7 @@ package binarysearch;
 public class RotatedBinarySearch {
 
     public static void main(String[] args) {
-        int[] arr = {6, 11, 12, 22, 31, 3, 4};
+        int[] arr = {11, 12, 22, 31, 3, 4, 5 , 6, 7};
         int end = arr.length-1;
        System.out.println(search(arr, 0, end, 6));
     }
@@ -35,6 +35,7 @@ public class RotatedBinarySearch {
     static int search(int[] arr, int st, int end, int t){
 
         int pivot = findPivot(arr);
+        System.out.println(pivot);
         //case 0
         if(pivot == -1){
             return binarySearch(arr, st, end, t);
