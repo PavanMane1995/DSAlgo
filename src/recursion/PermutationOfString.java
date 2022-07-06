@@ -14,6 +14,7 @@ public class PermutationOfString {
     public static void main(String[] args) {
         subSets("", "abc");
         System.out.println(subSets1("", "abc"));
+        System.out.println(subSetsAscii("", "abc"));
     }
 
     //Method 1
@@ -49,4 +50,26 @@ public class PermutationOfString {
 
 
     }
+
+    static List<String> subSetsAscii(String p, String up){
+        List<String> first ;
+        List<String> sec;
+        List<String> third;
+        if(up.isEmpty()){
+            List<String> l = new ArrayList<>();
+            l.add(p);
+            return l;
+        }
+
+        char ch = up.charAt(0);
+        first =subSetsAscii(p+ch, up.substring(1));
+        sec = subSetsAscii(p, up.substring(1));
+        third = subSetsAscii(p+(ch+0), up.substring(1));
+
+        first.addAll(sec);
+        first.addAll(third);
+        return first;
+    }
+
+
 }
