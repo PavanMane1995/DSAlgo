@@ -4,9 +4,12 @@ package binarysearch;
 public class RotatedBinarySearch {
 
     public static void main(String[] args) {
-        int[] arr = {11, 12, 22, 31, 3, 4, 5 , 6, 7};
+       // int[] arr = {11, 12, 22, 31, 3, 4, 5 , 6, 7};
+       // int[] arr = {7,1,2,2,2,2,2,6,6};
+       int[] arr ={ 3,1};
         int end = arr.length-1;
-       System.out.println(search(arr, 0, end, 6));
+      // System.out.println(search(arr, 0, end, 6));
+       System.out.println(findPivotDuplicate(arr));
     }
 
     static int findPivot(int[] arr){
@@ -59,6 +62,28 @@ public class RotatedBinarySearch {
             if(arr[mid] == t)return mid;
             else if(arr[mid]>t)end = mid -1;
             else if(arr[mid] < t) st = mid +1;
+        }
+        return -1;
+    }
+
+    static int findPivotDuplicate(int[] arr){
+        int st = 0;
+        int end = arr.length-1;
+
+        while(st <= end){
+            int mid = st + (end - st)/2;
+
+            if(mid < end && arr[mid] >arr[mid+1]){
+                return mid;
+            }
+            if(mid > st && arr[mid] < arr[mid-1]){
+                return mid-1;
+            }
+            if(arr[mid] < arr[st]){
+                end = mid -1;
+            }else {
+                st = mid +1;
+            }
         }
         return -1;
     }
