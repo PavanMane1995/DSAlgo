@@ -5,7 +5,8 @@ public class FactorsOfNumber {
     //factor of 10 -> 1, 2, 5, 10;
     public static void main(String[] args) {
        // factors(10);
-        factorsWithRecusrion(20, 1);
+       // factorsWithRecusrion(20, 1);
+        factors2(20);
     }
 
     //Using loop
@@ -28,5 +29,16 @@ public class FactorsOfNumber {
         }
          factorsWithRecusrion(n, ++i);
         }
+
+        //O(Sqrt(n))
+    public static void factors2(int n){
+        int i=1;
+        while(i<=Math.sqrt(n)){
+            if(n%i ==0){
+                System.out.println(i + "\n"+n/i);
+            }
+            i++;
+        }
+    }
 
 }

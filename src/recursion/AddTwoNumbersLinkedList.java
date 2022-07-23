@@ -1,3 +1,4 @@
+/*
 package recursion;
 
 import lombok.val;
@@ -6,11 +7,17 @@ public class AddTwoNumbersLinkedList {
 
     public static void main(String[] args) {
         ListNode a = new ListNode(9);
-
         ListNode b = new ListNode(1);
         b.next = new ListNode(9);
         b.next.next = new ListNode(9);
         b.next.next.next = new ListNode(9);
+        b.next.next.next.next = new ListNode(9);
+        b.next.next.next.next.next = new ListNode(9);
+        b.next.next.next.next.next.next = new ListNode(9);
+        b.next.next.next.next.next.next.next = new ListNode(9);
+        b.next.next.next.next.next.next.next.next = new ListNode(9);
+
+
 
        int aSum = add1(b);
         int bSum = add1(a);
@@ -20,9 +27,9 @@ public class AddTwoNumbersLinkedList {
         ListNode c = new ListNode();
        // System.out.println(addTwoNumbers(a, b));
 
-
-        ListNode ll =reverse(convertToLinkedNode(aSum+bSum, null));
-        ListNode curr =ll;
+        ListNode cc = convertToLinkedNode(aSum+bSum, null);
+        //ListNode ll =reverse(convertToLinkedNode(aSum+bSum, null));
+        ListNode curr =cc;
         while (curr.next != null){
             System.out.println(curr.getValue());
             curr = curr.next;
@@ -77,7 +84,7 @@ public class AddTwoNumbersLinkedList {
     }
 }
 
-class ListNode {
+class ListNode1 {
      int value;
      ListNode next;
     public ListNode(int value){
@@ -94,3 +101,4 @@ class ListNode {
 
 
 }
+*/
