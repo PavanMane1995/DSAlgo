@@ -8,13 +8,14 @@ public class ReverseNumber {
        // System.out.println(sum);
         //System.out.println(reverseNumber(543));
 
-        System.out.println((int) Math.log10(134));
-        System.out.println(reverseNumb2(432));
+        //System.out.println((int) Math.log10(134));
+        reverseNumb(43542);
     }
 
     //Method 1
     public static void reverseNumb(int n){
         if(n==0){
+            System.out.println(sum);
             return;
         }
         int a = n%10;
