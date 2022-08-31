@@ -10,9 +10,9 @@ public class SubsetUsingLoop {
      *
      */
     public static void main(String[] args) {
-        int[] arr = {1, 2, 2, 3};
-        System.out.println(subset(arr));
-        System.out.println(subsetDuplicateRemoval(arr));
+        int[] arr = {4,4,4,1,4};
+       // System.out.println(subset(arr));
+        System.out.println(subsetDuplicateRemoval2(arr));
     }
 
     /**
@@ -28,7 +28,10 @@ public class SubsetUsingLoop {
             for (int j = 0; j < size; j++) {
                 ArrayList<Integer> inner = new ArrayList<>(outer.get(j));
                 inner.add(k);
-                outer.add(inner);
+                if(!outer.get(j).containsAll(inner)){
+                    outer.add(inner);
+                }
+                //outer.add(inner);
             }
         }
     return outer;
@@ -58,5 +61,25 @@ public class SubsetUsingLoop {
         return outer;
 
 
+    }
+
+
+    static ArrayList<ArrayList<Integer>> subsetDuplicateRemoval2(int[] arr){
+        ArrayList<ArrayList<Integer>> outer = new ArrayList<>();
+        outer.add(new ArrayList<>());
+        int tSize =0;
+        for(int i=0; i< arr.length; i++){
+            int size = outer.size();
+            if(i>0 &&arr[i] != arr[i-1]){
+                tSize =0;
+            }
+            for(int j=tSize; j<size; j++){
+                ArrayList<Integer> inner = new ArrayList<>(outer.get(j));
+                inner.add(arr[i]);
+                outer.add(inner);
+            }
+            tSize = size;
+        }
+        return outer;
     }
 }

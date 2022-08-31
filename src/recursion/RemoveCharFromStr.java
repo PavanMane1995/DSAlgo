@@ -27,6 +27,7 @@ public class RemoveCharFromStr {
         }
 
         char c = up.charAt(0);
+
         if(c == 'a'){
             removeChar(p, up.substring(1));
         }else{
