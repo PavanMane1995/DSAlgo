@@ -6,7 +6,7 @@ public class RotatedBinarySearch {
     public static void main(String[] args) {
        // int[] arr = {11, 12, 22, 31, 3, 4, 5 , 6, 7};
        // int[] arr = {7,1,2,2,2,2,2,6,6};
-       int[] arr ={ 3,1};
+       int[] arr ={1,2};
         int end = arr.length-1;
       // System.out.println(search(arr, 0, end, 6));
        System.out.println(findPivotDuplicate(arr));

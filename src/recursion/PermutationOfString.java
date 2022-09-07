@@ -1,75 +1,62 @@
 package recursion;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 public class PermutationOfString {
 
     /**
-     *  String input = "abc";
-     *  String[] output = {"a", "b", "c", "ab", "ac", "bc", "abc"};
+     * input = "abc"
+     * output = [abc, acb, bac, bca, cab, cba]
+     * @param args
      */
-
     public static void main(String[] args) {
-        subSets("", "abc");
-        System.out.println(subSets1("", "abc"));
-        System.out.println(subSetsAscii("", "abc"));
+      /*  System.out.println("Print inside method");
+        permutation("", "abc");
+        System.out.println("\nReturn Permutaion List");
+        ArrayList<String> ans = permutationList("", "abcd");
+        ans.forEach(System.out::println);*/
+        System.out.println(percentageLetter("foobar", 'o'));
     }
 
-    //Method 1
-    static void subSets(String p, String up){
+    static void permutation(String p, String up){
 
         if(up.isEmpty()){
             System.out.println(p);
             return;
         }
-
         char ch = up.charAt(0);
-        subSets(p+ch, up.substring(1));
-        subSets(p, up.substring(1));
-
+        for(int i=0; i<=p.length(); i++){
+            permutation(p.substring(0,i)+ch+p.substring(i,p.length()), up.substring(1));
+        }
     }
 
     //Method 2
-   static List<String> subSets1(String p, String up){
-       List<String> left ;
-       List<String> right;
+    static ArrayList<String> permutationList(String p, String up){
+
         if(up.isEmpty()){
-
-            List<String> l = new ArrayList<>();
-            l.add(p);
-            return l;
+           ArrayList<String> a = new ArrayList<>();
+           a.add(p);
+            return a;
         }
-
         char ch = up.charAt(0);
-        left =subSets1(p+ch, up.substring(1));
-        right = subSets1(p, up.substring(1));
-        left.addAll(right);
-        return left;
-
-
+        ArrayList<String> ans = new ArrayList<>();
+        for(int i=0; i<=p.length(); i++){
+            ans.addAll(permutationList(p.substring(0,i)+ch+p.substring(i,p.length()), up.substring(1)));
+        }
+        return ans;
     }
 
-    static List<String> subSetsAscii(String p, String up){
-        List<String> first ;
-        List<String> sec;
-        List<String> third;
-        if(up.isEmpty()){
-            List<String> l = new ArrayList<>();
-            l.add(p);
-            return l;
+
+    public static int percentageLetter(String s, char letter) {
+        char[] ch = s.toCharArray();
+        double count = 0.0;
+        for(char c : ch){
+            if(c == letter){
+                count = count+1;
+            }
         }
-
-        char ch = up.charAt(0);
-        first =subSetsAscii(p+ch, up.substring(1));
-        sec = subSetsAscii(p, up.substring(1));
-        third = subSetsAscii(p+(ch+0), up.substring(1));
-
-        first.addAll(sec);
-        first.addAll(third);
-        return first;
+        double a = count/s.length();
+        return (int)(a * 100);
     }
-
 
 }

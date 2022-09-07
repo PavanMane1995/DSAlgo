@@ -1,4 +1,4 @@
-package recursion;
+package recursion.maze;
 
 import java.util.ArrayList;
 import java.util.List;
