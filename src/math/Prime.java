@@ -6,9 +6,9 @@ public class Prime {
         System.out.println(isPrimeNumber(23));
 
         //Print all prime numbers from 1
-        for(int i=0; i<20; i++){
-            System.out.println(i+ "->" +isPrimeNumber(i));
-        }
+        //for(int i=0; i<20; i++){
+            System.out.println(122123+ "->" +isPrimeNumber(122123));
+        //}
 
     }
 
