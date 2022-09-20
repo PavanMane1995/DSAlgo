@@ -1,6 +1,5 @@
 package java8;
 
-import lombok.Data;
 
 import java.math.BigDecimal;
 
