@@ -9,7 +9,7 @@ In other words, it is any substring of the string "abcdefghijklmnopqrstuvwxyz" *
 public class AlphabeticalContinuousString {
 
     public static void main(String[] args) {
-        String s = "abacaba";
+        String s = "abcb";
         Set<String>  set = findContiguousAlphabets("", s);
         //Printing combinations
         System.out.println(set);
