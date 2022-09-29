@@ -1,5 +1,8 @@
 package binarytree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTreeInPrePostOrderTraversal {
 
     public static void main(String[] args) {
@@ -19,6 +22,10 @@ public class BinaryTreeInPrePostOrderTraversal {
         System.out.println();
         System.out.println("InOrder -");
         bt.inOrder(bt.root);
+        System.out.println();
+        bt.levelOrder(bt.root);
+
+       // System.out.println(bt.fib(3));
     }
 
 }
@@ -27,9 +34,14 @@ class Node {
     int key;
     Node left;
     Node right;
+    int count =0;
 
     public Node(int key){
         this.key = key;
+    }
+
+    public Node getLeft(){
+        return left;
     }
 }
 class BinaryTree{
@@ -44,7 +56,7 @@ class BinaryTree{
             return;
         }
         System.out.print(node.key+ ", ");
-        preOrder(node.left);
+        preOrder(node.getLeft());
         preOrder(node.right);
 
     }
@@ -54,7 +66,6 @@ class BinaryTree{
         if(node ==  null){
             return;
         }
-
         postOrder(node.left);
         postOrder(node.right);
         System.out.print(node.key+ ", ");
@@ -65,9 +76,47 @@ class BinaryTree{
         if(node ==  null){
             return;
         }
-        inOrder(node.left);
+        inOrder(node.left);  //Node 1, Node 2, Node 4, Node null
         System.out.print(node.key + ", ");
         inOrder(node.right);
 
+    }
+
+    //BFS
+    void levelOrder(Node root){
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        //Just to recognize new line added null
+        q.add(null);
+
+        while (!q.isEmpty()){
+            Node curNode = q.remove();
+            if(curNode == null){
+                System.out.println();
+                if(q.isEmpty())
+                    break;
+                else
+                    q.add(null);
+            }else{
+                System.out.print(curNode.key+ "-");
+                if(curNode.left != null){
+                    q.add(curNode.left);
+                }
+                if(curNode.right != null){
+                    q.add(curNode.right);
+                }
+            }
+        }
+
+    }
+
+
+    public int fib(int n){
+        if(n < 2){
+            return 1;
+        }
+         int a =fib(n-1);
+        int b = fib(n-2);
+        return a+b;
     }
 }

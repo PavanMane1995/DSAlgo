@@ -10,6 +10,12 @@ public class Main {
         //s.print();
         s.insertLastWithTail(14);
         s.insertLastWithTail(8);
+        try {
+            s.insertAtIndex(1, 5);
+        }catch (RuntimeException r){
+            System.err.println(r.getMessage());
+        }
+
         s.print();
     }
 }

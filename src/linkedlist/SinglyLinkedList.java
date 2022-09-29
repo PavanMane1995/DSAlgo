@@ -60,6 +60,25 @@ public class SinglyLinkedList {
 
     }
 
+    //insert at given index
+    public void insertAtIndex(int val, int index){
+        Node node = new Node(val);
+        if(head == null){
+            insertFirst(val);
+            return;
+        }else if(size < index){
+            throw new RuntimeException("index cannot br greater than linked list size");
+        }
+        Node cur = head;
+        int count =0;
+        while (count < index-1){
+            cur = cur.next;
+            count++;
+        }
+        node.next = cur.next;
+        cur.next= node;
+    }
+
     public void print(){
         Node temp = head;
         System.out.println("Size of Linked List is "+size);

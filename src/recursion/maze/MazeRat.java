@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class MazeRat {
 
     public static void main(String[] args) {
-        int m[][] = {{1, 0},
-                {1, 0}};
+        int m[][] = {{1, 1},
+                     {1, 1}};
 
         System.out.println(findPath(m, 4));
     }
