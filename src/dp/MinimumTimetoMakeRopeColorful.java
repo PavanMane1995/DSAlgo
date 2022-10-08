@@ -21,7 +21,7 @@ public class MinimumTimetoMakeRopeColorful {
             if(col[i] == col[j]){
                 sum = sum + Math.min(neededTime[i], neededTime[j]);
                 if(neededTime[i] <=neededTime[j]){
-                    i++;
+                    i=j;
                 }
 
             }else{
