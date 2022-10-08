@@ -1,7 +1,6 @@
 package binarytree;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class BinaryTreeInPrePostOrderTraversal {
 
@@ -58,6 +57,7 @@ class BinaryTree{
         System.out.print(node.key+ ", ");
         preOrder(node.getLeft());
         preOrder(node.right);
+        List<Integer> l = new ArrayList<>();
 
     }
 
@@ -84,7 +84,7 @@ class BinaryTree{
 
     //BFS
     void levelOrder(Node root){
-        Queue<Node> q = new LinkedList<>();
+        Queue<Node> q = new PriorityQueue<>();
         q.add(root);
         //Just to recognize new line added null
         q.add(null);

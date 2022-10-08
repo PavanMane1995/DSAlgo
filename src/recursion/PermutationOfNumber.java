@@ -11,21 +11,25 @@ public class PermutationOfNumber {
         list.add(1);
         list.add(2);
         list.add(3);
-        permutation(new ArrayList<>(), list);
-
+       permutation(new ArrayList<>(), list);
+        //System.out.println(Integer.MAX_VALUE);
     }
 
     public static void permutation(List<Integer> p, List<Integer> up){
-        if(up.isEmpty()){
+        if(up.size() == p.size()){
             System.out.println(p);
             return;
         }
 
         for (int i=0; i< up.size(); i++){
-            List<Integer> current = up;
+            if(p.contains(up.get(i))){
+                continue;
+            }
             p.add(up.get(i));
-            current.remove(i);
-            permutation(p, current);
+            permutation(p, up);
+            p.remove(p.size()-1);
+
         }
     }
 }
+

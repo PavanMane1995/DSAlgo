@@ -20,9 +20,11 @@ public class CountNodesInBinaryTree {
             return 0;
         }
         //int count = c+1;
-        int left = count(root.left);
-        int right = count(root.right);
-        return left+right+1;
+        int l = count(root.left);
+        //count = count+1;
+        int r =count(root.right);
+        //count = count+1;
+        return l+r+1;
 
 
     }
