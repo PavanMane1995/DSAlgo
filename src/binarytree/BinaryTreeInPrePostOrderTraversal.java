@@ -30,13 +30,13 @@ public class BinaryTreeInPrePostOrderTraversal {
 }
 
 class Node {
-    int key;
+    int val;
     Node left;
     Node right;
     int count =0;
 
-    public Node(int key){
-        this.key = key;
+    public Node(int val){
+        this.val = val;
     }
 
     public Node getLeft(){
@@ -54,7 +54,7 @@ class BinaryTree{
         if(node == null){
             return;
         }
-        System.out.print(node.key+ ", ");
+        System.out.print(node.val + ", ");
         preOrder(node.getLeft());
         preOrder(node.right);
         List<Integer> l = new ArrayList<>();
@@ -68,7 +68,7 @@ class BinaryTree{
         }
         postOrder(node.left);
         postOrder(node.right);
-        System.out.print(node.key+ ", ");
+        System.out.print(node.val + ", ");
     }
 
     //PostOrder Traversal
@@ -77,7 +77,7 @@ class BinaryTree{
             return;
         }
         inOrder(node.left);  //Node 1, Node 2, Node 4, Node null
-        System.out.print(node.key + ", ");
+        System.out.print(node.val + ", ");
         inOrder(node.right);
 
     }
@@ -98,7 +98,7 @@ class BinaryTree{
                 else
                     q.add(null);
             }else{
-                System.out.print(curNode.key+ "-");
+                System.out.print(curNode.val + "-");
                 if(curNode.left != null){
                     q.add(curNode.left);
                 }

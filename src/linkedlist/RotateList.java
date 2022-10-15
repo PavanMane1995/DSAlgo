@@ -22,6 +22,8 @@ public class RotateList {
             size++;
         }
         int outerCount =0;
+
+        //taking mode if size is given more than it's size
         int mod = k%size;
         while(outerCount < mod){
             int innerCount = 1;

@@ -20,10 +20,10 @@ public class ValidateBinaryTree {
         if(root == null){
             return true;
         }
-        if((min != null && root.key <= min) || (max != null && root.key >= max )){
+        if((min != null && root.val <= min) || (max != null && root.val >= max )){
             return false;
         }
-        return validateBinaryTree(root.left, min, root.key) && validateBinaryTree(root.right, root.key, max);
+        return validateBinaryTree(root.left, min, root.val) && validateBinaryTree(root.right, root.val, max);
     }
 
 }

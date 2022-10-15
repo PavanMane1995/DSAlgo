@@ -15,7 +15,7 @@ public class PermutationOfString {
         System.out.println("\nReturn Permutaion List");
         ArrayList<String> ans = permutationList("", "abcd");
         ans.forEach(System.out::println);*/
-        System.out.println(percentageLetter("foobar", 'o'));
+        System.out.println(percentageLetter("foobar", 'b'));
     }
 
     static void permutation(String p, String up){
