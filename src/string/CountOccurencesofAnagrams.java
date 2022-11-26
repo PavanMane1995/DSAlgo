@@ -5,6 +5,7 @@ import java.util.*;
 public class CountOccurencesofAnagrams {
 
     public static void main(String[] args) {
+
         System.out.println(search("abc", "cbaebabacd"));
         System.out.println(search2("abc", "cbaebabacd"));
         System.out.println(search3("abc", "cbaebabacd"));
@@ -22,7 +23,7 @@ public class CountOccurencesofAnagrams {
             patCountArr[p-'a']++;
         }
         char[] txtCharArray = txt.toCharArray();
-        for(int i=0; i< txtCharArray.length && i<= txtCharArray.length-pat.length(); i++){
+        for(int i=0; i<= txtCharArray.length-pat.length(); i++){
             int[] temp = Arrays.copyOfRange(patCountArr, 0, patCountArr.length);
             int k = pat.length()+i; // iterating pat.length times
             int j=i;
