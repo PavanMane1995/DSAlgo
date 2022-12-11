@@ -26,6 +26,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
             }
         }
 
+        set.forEach(System.out::print);
+
         return max;
     }
 }
